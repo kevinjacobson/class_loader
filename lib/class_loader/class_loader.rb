@@ -100,7 +100,7 @@ module ClassLoader
       monitor.synchronize do
         paths.each do |path|
           Dir.glob("#{path}/**/*.rb").each do |class_path|
-            class_file_name = class_path.sub("#{path}/", '').sub(/\.rb$/, '')
+            class_file_name = class_path.sub("#{path}/", '')
             require class_file_name
           end
         end
